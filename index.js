@@ -25,9 +25,17 @@ io.on("connection", (socket) => {
     console.log("message: " + msg);
   });
 
-  io.on("connection", (socket) => {
-    socket.on("hello", (arg) => {
-      console.log(arg); // 'world'
+//   io.on("connection", (socket) => {
+//     socket.on("hello", (arg) => {
+//       console.log(arg); // 'world'
+//     });
+//   });
+
+  io.on('connection', (socket) => {
+    socket.on('hello', (arg1, arg2, arg3) => {
+      console.log(arg1); // 1
+      console.log(arg2); // '2'
+      console.log(arg3); // { 3: '4', 5: <Buffer 06> }
     });
   });
 

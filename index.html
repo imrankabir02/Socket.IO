@@ -91,7 +91,9 @@
             window.scrollTo(0, document.body.scrollHeight)
         })
 
-        socket.emit('hello', 'world');
+        socket.emit('hello', 1, '2', { 3: '4', 5: Uint8Array.from([6]) });
+
+        <!-- socket.emit('hello', 'world'); -->
     </script>
 </body>
 
